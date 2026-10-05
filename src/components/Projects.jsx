@@ -10,25 +10,47 @@ const projects = [
     title: "Inventory & Bill Management",
     description:
       "A comprehensive full-stack MERN web application for inventory tracking, automated bill & invoice generation, real-time product stock monitoring, and customer transaction management with secure REST APIs and MongoDB database.",
-    tech: ["MongoDB", "Express.js", "React.js", "Node.js", "Tailwind CSS", "REST API"],
+    tech: [
+      "MongoDB",
+      "Express.js",
+      "React.js",
+      "Node.js",
+      "Tailwind CSS",
+      "REST API",
+    ],
     github: "https://github.com/sahu720p/inventory-bill-management",
-    live: "https://github.com/sahu720p/inventory-bill-management",
+    live: "https://inventory-bill-management.vercel.app",
   },
+
   {
     title: "Library Management System",
     description:
       "An automated MERN stack library operations system designed to catalog books, track issue and return timelines, manage student member databases, and calculate overdue fines with an interactive React dashboard and Express backend.",
-    tech: ["MongoDB", "Express.js", "React.js", "Node.js", "REST API", "Tailwind CSS"],
-    github: "https://github.com/sahu720p",
-    live: "https://github.com/sahu720p",
+    tech: [
+      "MongoDB",
+      "Express.js",
+      "React.js",
+      "Node.js",
+      "REST API",
+      "Tailwind CSS",
+    ],
+    github: "https://github.com/sahu720p/library-management-system",
+    live: "#",
   },
+
   {
     title: "Personal Portfolio Website",
     description:
       "A modern, high-performance personal developer portfolio built with React.js, Next.js, Tailwind CSS, and Framer Motion featuring sleek dark ambient lighting, dynamic typing roles, smooth transitions, and responsive mobile design.",
-    tech: ["React.js", "Next.js", "Tailwind CSS", "Framer Motion", "JavaScript"],
-    github: "https://github.com/sahu720p",
-    live: "#",
+    tech: [
+      "React.js",
+      "Next.js",
+      "Tailwind CSS",
+      "Framer Motion",
+      "JavaScript",
+    ],
+    github: "https://github.com/sahu720p/saurabh-portfolio",
+    live: "https://saurabh-portfolio-rho-five.vercel.app",
   },
 ];
 
@@ -36,69 +58,71 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="min-h-screen text-white relative overflow-hidden py-16 sm:py-24 px-4 sm:px-6 lg:px-8"
-      style={{
-        backgroundColor: "#0a0e14",
-      }}
+      className="relative py-24 px-6 overflow-hidden"
     >
-      {/* Background ambient lighting */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
+      {/* Ambient Background */}
+      <div className="absolute inset-0 pointer-events-none">
         <motion.div
-          className="absolute top-20 left-6 sm:left-10 h-[220px] sm:h-[320px] lg:h-[420px] w-[220px] sm:w-[320px] lg:w-[420px] rounded-full bg-cyan-500/15 blur-[80px] sm:blur-[120px]"
-          animate={{ opacity: [0.35, 0.75, 0.35] }}
-          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-        />
-        <motion.div
-          className="absolute bottom-8 right-6 sm:right-10 h-[220px] sm:h-[320px] lg:h-[420px] w-[220px] sm:w-[320px] lg:w-[420px] rounded-full bg-fuchsia-500/15 blur-[80px] sm:blur-[120px]"
-          animate={{ opacity: [0.3, 0.7, 0.3] }}
-          transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-        />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[360px] w-[360px] rounded-full bg-blue-600/10 blur-[130px]" />
-        <div
-          className="absolute inset-0 opacity-[0.06]"
-          style={{
-            backgroundImage:
-              "linear-gradient(to right, #ffffff 1px, transparent 1px), linear-gradient(to bottom, #ffffff 1px, transparent 1px)",
-            backgroundSize: "56px 56px",
-            maskImage: "radial-gradient(ellipse 80% 60% at 50% 20%, black 40%, transparent 90%)",
+          animate={{
+            x: [0, 100, 0],
+            y: [0, -80, 0],
           }}
+          transition={{
+            duration: 12,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+          className="absolute top-20 left-10 w-72 h-72 bg-purple-500/10 rounded-full blur-3xl"
+        />
+
+        <motion.div
+          animate={{
+            x: [0, -100, 0],
+            y: [0, 80, 0],
+          }}
+          transition={{
+            duration: 14,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+          className="absolute bottom-20 right-10 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl"
         />
       </div>
 
-      <div
-        className="relative z-10 w-full"
-        style={{ maxWidth: "760px", marginLeft: "auto", marginRight: "auto" }}
-      >
+      <div className="relative max-w-7xl mx-auto">
+        {/* Section Heading */}
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          style={{ textAlign: "center", marginBottom: "4rem" }}
+          className="text-center mb-16"
         >
-          <p
-            className="font-medium tracking-widest uppercase text-sm"
-            style={{ color: "#9ca3af", marginBottom: "0.75rem" }}
-          >
-            Portfolio
+          <p className="text-purple-400 font-medium mb-3">
+            MY WORK
           </p>
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight" style={{ color: "#ffffff" }}>
-            My <span style={{ color: "#ffffff" }}>Projects</span>
+
+          <h2 className="text-4xl md:text-5xl font-bold text-white">
+            Featured{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400">
+              Projects
+            </span>
           </h2>
-          <div
-            style={{
-              width: "5rem",
-              height: "4px",
-              margin: "1.25rem auto 0",
-              borderRadius: "9999px",
-              background: "linear-gradient(to right, #6b7280, #d1d5db)",
-            }}
-          />
+
+          <p className="text-gray-400 mt-5 max-w-2xl mx-auto">
+            Here are some of the projects I have built using modern
+            web technologies and full-stack development tools.
+          </p>
         </motion.div>
 
-        <div style={{ display: "flex", flexDirection: "column", gap: "1.75rem", alignItems: "stretch" }}>
+        {/* Projects Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
-            <ProjectCard key={index} project={project} index={index} />
+            <ProjectCard
+              key={project.title}
+              project={project}
+              index={index}
+            />
           ))}
         </div>
       </div>
@@ -111,125 +135,91 @@ function ProjectCard({ project, index }) {
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 30 }}
+      initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5, delay: index * 0.12 }}
-      whileHover={{ y: -5 }}
-      className="relative rounded-xl overflow-hidden border transition-all duration-300"
-      style={{
-        background: "linear-gradient(to bottom, #111111, #000000)",
-        borderColor: "#3f3f46",
-        width: "100%",
-        boxSizing: "border-box",
-        padding: "1.75rem",
+      transition={{
+        duration: 0.6,
+        delay: index * 0.1,
       }}
+      viewport={{ once: true }}
+      whileHover={{ y: -8 }}
+      className="group relative rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-xl p-6 overflow-hidden"
     >
-      <div className="flex items-center justify-between gap-2 mb-2">
-        <h3
-          className="text-xl sm:text-2xl font-bold"
-          style={{ color: "#ffffff" }}
-        >
+      {/* Card Glow */}
+      <div className="absolute -top-20 -right-20 w-40 h-40 bg-purple-500/10 rounded-full blur-3xl group-hover:bg-purple-500/20 transition-all duration-500" />
+
+      <div className="relative z-10">
+        {/* Project Number */}
+        <div className="flex items-center justify-between mb-6">
+          <span className="text-sm text-purple-400 font-semibold">
+            0{index + 1}
+          </span>
+
+          <FaGithub className="text-2xl text-gray-400 group-hover:text-white transition-colors" />
+        </div>
+
+        {/* Title */}
+        <h3 className="text-2xl font-bold text-white mb-4">
           {project.title}
         </h3>
-        <span className="text-xs font-mono text-zinc-500 font-semibold">
-          0{index + 1}
-        </span>
-      </div>
 
-      <p
-        className="text-sm"
-        style={{ color: "#a1a1aa", lineHeight: "1.7", marginBottom: "0.5rem" }}
-      >
-        {expanded
-          ? project.description
-          : project.description.length > 95
-          ? project.description.slice(0, 95) + "..."
-          : project.description}
-      </p>
+        {/* Description */}
+        <div className="text-gray-400 text-sm leading-6 mb-5">
+          {expanded
+            ? project.description
+            : `${project.description.substring(0, 150)}...`}
 
-      {project.description.length > 95 && (
-        <button
-          onClick={() => setExpanded(!expanded)}
-          aria-expanded={expanded}
-          className="text-sm font-medium transition-colors hover:text-white"
-          style={{ color: "#38bdf8", marginBottom: "1.25rem", display: "inline-block" }}
-        >
-          {expanded ? "Read Less" : "Read More"}
-        </button>
-      )}
+          {project.description.length > 150 && (
+            <button
+              onClick={() => setExpanded(!expanded)}
+              className="ml-2 text-purple-400 hover:text-purple-300 font-medium"
+            >
+              {expanded ? "Read Less" : "Read More"}
+            </button>
+          )}
+        </div>
 
-      {/* Tech Tags */}
-      <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem", marginBottom: "1.5rem" }}>
-        {project.tech.map((t, i) => (
-          <span
-            key={i}
-            className="text-xs rounded-full border font-medium"
-            style={{
-              backgroundColor: "#18181b",
-              color: "#d4d4d8",
-              borderColor: "#3f3f46",
-              padding: "0.3rem 0.8rem",
-            }}
-          >
-            {t}
-          </span>
-        ))}
-      </div>
+        {/* Technologies */}
+        <div className="flex flex-wrap gap-2 mb-7">
+          {project.tech.map((technology) => (
+            <span
+              key={technology}
+              className="px-3 py-1 text-xs rounded-full bg-white/5 border border-white/10 text-gray-300"
+            >
+              {technology}
+            </span>
+          ))}
+        </div>
 
-      {/* Action Links */}
-      <div style={{ display: "flex", flexWrap: "wrap", gap: "0.75rem" }}>
-        <a
-          href={project.github}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-sm font-medium rounded-lg border transition-colors hover:bg-zinc-800"
-          style={{
-            display: "inline-flex",
-            alignItems: "center",
-            gap: "0.5rem",
-            borderColor: "#3f3f46",
-            color: "#ffffff",
-            padding: "0.55rem 1.1rem",
-          }}
-        >
-          <FaGithub size={16} />
-          GitHub
-        </a>
-
-        {project.live && project.live !== "#" ? (
+        {/* Buttons */}
+        <div className="flex gap-3">
           <a
-            href={project.live}
+            href={project.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm font-semibold rounded-lg transition-colors hover:bg-slate-200"
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: "0.5rem",
-              backgroundColor: "#ffffff",
-              color: "#000000",
-              padding: "0.55rem 1.1rem",
-            }}
+            className="flex-1 flex items-center justify-center gap-2 px-4 py-3 rounded-xl border border-white/10 bg-white/5 text-white hover:bg-white/10 transition-all duration-300"
           >
-            <ExternalLink size={15} />
-            Live Demo
+            <FaGithub />
+            GitHub
           </a>
-        ) : (
-          <span
-            className="text-sm font-medium rounded-lg opacity-60 cursor-default"
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: "0.5rem",
-              backgroundColor: "#27272a",
-              color: "#a1a1aa",
-              padding: "0.55rem 1.1rem",
-            }}
-          >
-            In Progress
-          </span>
-        )}
+
+          {project.live && project.live !== "#" ? (
+            <a
+              href={project.live}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-1 flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-gradient-to-r from-purple-500 to-blue-500 text-white hover:opacity-90 transition-all duration-300"
+            >
+              <ExternalLink size={17} />
+              Live Demo
+            </a>
+          ) : (
+            <span className="flex-1 flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-gray-500 cursor-not-allowed">
+              <ExternalLink size={17} />
+              In Progress
+            </span>
+          )}
+        </div>
       </div>
     </motion.div>
   );
